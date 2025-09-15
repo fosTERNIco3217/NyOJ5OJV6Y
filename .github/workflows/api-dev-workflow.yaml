@@ -82,7 +82,7 @@ jobs:
           echo ${{ needs.build.outputs.image_tag }}
 
       - name: Update tag in values.yaml
-        uses: mikefarah/yq@v4.12.2
+        uses: mikefarah/yq@v4.47.2
         with:
           cmd: yq eval '.image.tag = "${{ needs.build.outputs.image_tag }}"' -i anoneko-adopt-api/chart/values.yaml
 
